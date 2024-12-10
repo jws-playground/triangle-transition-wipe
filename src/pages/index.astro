@@ -1,9 +1,189 @@
 ---
 import Layout from '@layouts/Layout.astro';
-const gh = '';
-const title = '';
+const gh = 'https://github.com/jws-playground/triangle-transition-wipe';
+const title = 'triangle-transition-wipe';
 ---
 
 <Layout pageId='top' gh={gh} title={title}>
-  <div class='container'></div>
+  <div class='triangle_wrap'>
+    <div class='triangle triangle-1'>
+      <svg
+        class='triangle-svg triangle-svg-1'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-2'>
+      <svg
+        class='triangle-svg triangle-svg-2'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-3'>
+      <svg
+        class='triangle-svg triangle-svg-3'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-4'>
+      <svg
+        class='triangle-svg triangle-svg-4'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-5'>
+      <svg
+        class='triangle-svg triangle-svg-5'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-6'>
+      <svg
+        class='triangle-svg triangle-svg-6'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle triangle-7'>
+      <svg
+        class='triangle-svg triangle-svg-7'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100.2 100'
+      >
+        <path d='M1,1.62,98,50,1,98.38V1.62M0,0V100L100.2,50,0,0Z'></path>
+      </svg>
+    </div>
+    <div class='triangle-contents'>
+      <div class='triangle-wrap'>
+        <h1>Triangle<br />Transition</h1>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style is:inline>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+  .triangle_wrap {
+    width: 100%;
+    height: calc(var(--vph) * 1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 4;
+  }
+
+  .triangle {
+    width: 0vw;
+    height: 0vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: sizeScale 0.5s ease-out 0.2s 1 normal forwards running;
+  }
+  .triangle svg {
+    width: 100%;
+    height: 100%;
+  }
+  .triangle svg path {
+    stroke: #000;
+    stroke-width: 1px;
+  }
+  .triangle-1 {
+    animation-delay: 0.2s;
+  }
+  .triangle-2 {
+    animation-delay: 0.3s;
+  }
+  .triangle-3 {
+    animation-delay: 0.4s;
+  }
+  .triangle-4 {
+    animation-delay: 0.58s;
+  }
+  .triangle-5 {
+    animation-delay: 0.65s;
+  }
+  .triangle-6 {
+    animation-delay: 0.7s;
+  }
+  .triangle-7 {
+    animation-delay: 0.8s;
+  }
+  .triangle-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    color: #fff;
+    background-color: #000;
+    animation: clipathScale 0.5s ease-out 0.9s 1 normal forwards running;
+    width: 0;
+    height: 0;
+  }
+  .triangle-wrap {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .triangle-wrap h1 {
+    animation: fontSize 0.5s ease-out 0.9s 1 normal forwards running;
+    text-align: center;
+    border: 10px solid #fff;
+    padding: 2.5vw;
+    line-height: 1.25;
+  }
+
+  @keyframes sizeScale {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 300vw;
+      height: 300vw;
+    }
+  }
+  @keyframes clipathScale {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 300vw;
+      height: 300vw;
+    }
+  }
+  @keyframes fontSize {
+    from {
+      font-size: 0;
+    }
+    to {
+      font-size: 8vw;
+    }
+  }
+</style>
